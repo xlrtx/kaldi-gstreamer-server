@@ -311,7 +311,7 @@ class ServerWebsocket(WebSocketClient):
             if blocking:
                 timeout=None
             else:
-                timeout=0.0
+                timeout=0.001
             try:
                 with (yield self.post_processor_lock.acquire(timeout)):
                     result = []
